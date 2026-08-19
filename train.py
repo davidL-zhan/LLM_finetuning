@@ -106,8 +106,8 @@ def train():
             "dev": str(config.dev_path),
         },
     )
-    train_loader = get_dataloader(dataset["train"], tokenizer)
-    dev_loader = get_dataloader(dataset["dev"], tokenizer)
+    train_loader = get_dataloader(dataset["train"], tokenizer,batch_size=config.batch_size)
+    dev_loader = get_dataloader(dataset["dev"], tokenizer,batch_size=config.batch_size)
 
     # # 根据训练轮数计算最大训练步数，以便于scheduler动态调整lr
     num_update_steps_per_epoch = len(train_loader)
