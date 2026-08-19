@@ -17,11 +17,11 @@ def second2time(seconds: int):
         seconds (int): _description_
     """
     m, s = divmod(seconds, 60)
-    print(f"m--》{m}")
-    print(f"s--》{s}")
+    # print(f"m--》{m}")
+    # print(f"s--》{s}")
     h, m = divmod(m, 60)
-    print(f"h--》{h}")
-    print(f"m--》{m}")
+    # print(f"h--》{h}")
+    # print(f"m--》{m}")
     return "%02d:%02d:%02d" % (h, m, s)
 
 
@@ -32,10 +32,10 @@ def save_model(model, cur_save_dir: str):
     Args:
         cur_save_path (str): 存储路径。
     """
-    if config.use_lora:  # merge lora params with origin model
-        merged_model = copy.deepcopy(model)
-        # 如果直接保存，只保存的是adapter也就是lora模型的参数
-        merged_model = merged_model.merge_and_unload()
-        merged_model.save_pretrained(cur_save_dir)
-    else:
-        model.save_pretrained(cur_save_dir)
+    # if config.use_lora:  # merge lora params with origin model
+    #     merged_model = copy.deepcopy(model)
+    #     # 如果直接保存，只保存的是adapter也就是lora模型的参数
+    #     merged_model = merged_model.merge_and_unload()
+    #     merged_model.save_pretrained(cur_save_dir)
+    # else:
+    model.save_pretrained(cur_save_dir)

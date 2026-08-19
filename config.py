@@ -9,13 +9,13 @@ class ProjectConfig(object):
         self.cur_path = Path(os.path.abspath(os.path.dirname(__file__)))
         # print(self.cur_path)
         # 定义是否使用GPU
-        self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
         # 定义Qwen3-4B模型的路径的名称
         self.pre_model = "Qwen/Qwen3-4B-Instruct-2507"
         # 定义训练数据的路径
-        self.train_path = self.cur_path / "data\mixed_train_dataset.jsonl"
+        self.train_path = self.cur_path / "data"/"mixed_train_dataset.jsonl"
         # 定义验证集的路径
-        self.dev_path = self.cur_path / "data\mixed_dev_dataset.jsonl"
+        self.dev_path = self.cur_path / "data"/"mixed_dev_dataset.jsonl"
         # 是否使用LoRA方法微调
         self.use_lora = True
         # 是否使用P-Tuing方法微调
@@ -23,7 +23,7 @@ class ProjectConfig(object):
         # 秩==8
         self.lora_rank = 8
         # 一个批次多少样本
-        self.batch_size = 4
+        self.batch_size = 2
         # 训练几轮
         self.epochs = 2
         # 学习率
@@ -46,7 +46,7 @@ class ProjectConfig(object):
             False  # 默认为False,即p-tuning,如果为True，即p-tuning-v2
         )
         # 保存模型的路径
-        self.save_dir = "/gemini/checkpoints/ptune"
+        self.save_dir = self.cur_path/ "checkpoints"/"lora"
 
 
 config = ProjectConfig()

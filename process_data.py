@@ -48,7 +48,7 @@ def get_dataloader(dataset, tokenizer, shuffle=True, batch_size=4, num_workers=0
             "max_source_len": config.max_source_seq_len,  # 100
             "max_target_len": config.max_target_seq_len,
         },
-        remove_columns=train_dataset.column_names,
+        remove_columns=dataset.column_names,
     )
     collator = DataCollatorForSeq2Seq(tokenizer, padding=True, return_tensors="pt")
     return DataLoader(
