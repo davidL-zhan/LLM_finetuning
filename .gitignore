@@ -1,0 +1,52 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# ===== 模型权重 & 微调产物 =====
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.gguf
+*.onnx
+checkpoints/
+outputs/
+saved_models/
+adapter_model/
+peft_model/
+
+# ===== 训练日志 =====
+runs/
+wandb/
+logs/
+*.log
+
+# ===== HuggingFace 缓存 =====
+.cache/
+.huggingface/
+
+# ===== 环境变量 & 密钥 =====
+.env
+.env.*
+
+# ===== IDE =====
+.idea/
+.vscode/
+
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db

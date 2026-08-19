@@ -7,7 +7,7 @@ from pathlib import Path
 class ProjectConfig(object):
     def __init__(self):
         self.cur_path = Path(os.path.abspath(os.path.dirname(__file__)))
-        print(self.cur_path)
+        # print(self.cur_path)
         # 定义是否使用GPU
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
         # 定义Qwen3-4B模型的路径的名称
