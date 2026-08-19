@@ -4,7 +4,6 @@ from config import config
 
 def convert_example(
     example,
-    tokenizer,
 ):
     return {
         "prompt": [
